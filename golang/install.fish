@@ -7,5 +7,5 @@ fish_add_path -a $GOPATH/bin /usr/local/go/bin
 
 if command -qs go
 	go install github.com/go-delve/delve/cmd/dlv@latest
-    go get github.com/motemen/ghq
+    go install github.com/x-motemen/ghq@latest
 end
