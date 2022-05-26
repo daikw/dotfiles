@@ -1,3 +1,5 @@
 #!/usr/bin/env fish
-set -Ua fish_user_paths $HOME/.cargo/bin
+source $DOTFILES/script/common.fish
 
+fish_add_path -a $HOME/.cargo/bin
+    or info "already appended to fish_user_paths"
