@@ -26,6 +26,7 @@ bind generic y @sh -c "echo %(commit) | head -c 7 | xsel -b"
 
 # push
 bind main U ?git poh "%(prompt Enter push branch => )" # poh = push origin HEAD:$1
+bind main <Ctrl-u> ?git push --set-upstream origin %(branch)
 
 # rebase
 bind main <Ctrl-r> ?git rebase -i %(commit)
