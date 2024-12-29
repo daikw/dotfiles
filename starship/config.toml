@@ -131,3 +131,6 @@ disabled = true
 
 [username]
 format = "[$user]($style)@"
+
+[time]
+disabled = false

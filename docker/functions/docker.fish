@@ -1,4 +1,4 @@
-function docker -w docker
+function _docker -w docker
 	switch $argv[1]
 	case 'exit'
 		pkill Docker
