@@ -56,3 +56,18 @@ bind -r l select-pane -R
 bind r source-file ~/.tmux.conf
 
 set -g status-position bottom
+
+set-window-option -g mode-keys vi
+
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel -bi"
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xsel -bi"
+
+bind a \
+  if-shell "tmux show-window-options synchronize-panes | grep off" \
+  "setw synchronize-panes on" \
+  "setw synchronize-panes off" \;\
+  display "synchronize-panes #{?pane_synchronized,on,off}"
+
+set-option -g history-limit 1000000
