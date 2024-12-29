@@ -11,3 +11,15 @@ fish_add_path "$HOME/.rye/shims"
 # set LD_LIBRARY_PATH /usr/local/cuda/lib64
 
 # set -gx PATH $PATH $HOME/.krew/bin
+
+# if pbcopy (for Darwin) not found, use xsel as a fallback
+switch (uname)
+case Darwin
+case Linux
+    if not command -qs pbcopy
+        alias pbcopy="xsel --clipboard --input"
+    end
+    if not command -qs pbpaste
+        alias pbpaste="xsel --clipboard --output"
+    end
+end
