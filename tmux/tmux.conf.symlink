@@ -55,5 +55,4 @@ bind -r h select-pane -L
 bind -r l select-pane -R
 bind r source-file ~/.tmux.conf
 
-source-file ~/.dotfiles/tmux/catppuccin.conf
 set -g status-position bottom

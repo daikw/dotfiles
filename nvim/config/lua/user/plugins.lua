@@ -45,10 +45,6 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 
 	-- ui
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-	})
 	use("stevearc/dressing.nvim")
 	use("j-hui/fidget.nvim")
 	use("nvim-lualine/lualine.nvim")
