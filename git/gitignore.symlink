@@ -14,3 +14,7 @@
 dump.rdb
 main.tfvars
 coverage.out
+**/CLAUDE.local.md
+**/.claude/settings.local.json
+**/.claude/persona.json
+
