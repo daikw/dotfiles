@@ -13,15 +13,9 @@ eval (/opt/homebrew/bin/brew shellenv)
 string match -q "$TERM_PROGRAM" "cursor"
 and . (code -- --locate-shell-integration-path fish)
 
-#fish_add_path $HOME/.anyenv/envs/rbenv/shims $HOME/.anyenv/envs/rbenv/bin
-
 #fish_add_path $DOTFILES/bin $HOME/.bin $HOME/.local/bin
-#set -x GOENV_ROOT $HOME/.anyenv/envs/goenv
-#fish_add_path $GOENV_ROOT/bin $GOENV_ROOT/shims $GOROOT/bin
-#goenv init - | source
 
 starship init fish | source
-#status --is-interactive; and source (anyenv init - --no-rehash|psub)
 
 # git
 abbr g "git"

@@ -13,4 +13,3 @@ build-essential
 xmonad
 libghc6-xmonad-dev
 golang
-anyenv
