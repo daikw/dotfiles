@@ -52,9 +52,6 @@ set --export --prepend PATH "/Users/daikiwatanabe/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/daikiwatanabe/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/daikiwatanabe/Downloads/google-cloud-sdk/path.fish.inc'; end
-
 # Added by Windsurf
 # fish_add_path /Users/daikiwatanabe/.codeium/windsurf/bin
 
@@ -62,12 +59,36 @@ if [ -f '/Users/daikiwatanabe/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/U
 set -gx PATH $PATH /Users/daikiwatanabe/.lmstudio/bin
 # End of LM Studio CLI section
 
-
-alias c=claude
-alias ccc='claude --continue'
+abbr c "claude"
+abbr ccc "claude --continue"
+abbr brc "CLAUDE_CODE_USE_BEDROCK=1 claude"
+abbr brccc "CLAUDE_CODE_USE_BEDROCK=1 claude --continue"
 
 
 # qlty
 set --export QLTY_INSTALL "$HOME/.qlty"
 set --export PATH $QLTY_INSTALL/bin $PATH
 /Users/daikiwatanabe/.local/bin/mise activate fish | source
+
+#set -e GOPATH
+set GOPATH "$HOME/go"
+
+
+# Agent Persona
+function zundamon
+    #set -l prompt (tail -n +5 ~/.claude/personas/zundamon.md | string collect)
+    sed -i "" "s/\"tengu_copper_bridge\": true/\"tengu_copper_bridge\": false/" ~/.claude.json 2>/dev/null
+    claude --append-system-prompt "$prompt" --dangerously-skip-permissions $argv
+end
+function anneli
+    sed -i "" "s/\"tengu_copper_bridge\": true/\"tengu_copper_bridge\": false/" ~/.claude.json 2>/dev/null
+    claude --enable-auto-mode $argv
+end
+function elu
+    set -l prompt (tail -n +5 ~/.agents/personas/elu.md | string collect)
+    codex --dangerously-bypass-approvals-and-sandbox "'"$prompt"'" $argv
+end
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/daikiwatanabe/.local/bin/google-cloud-sdk/path.fish.inc' ]; . '/Users/daikiwatanabe/.local/bin/google-cloud-sdk/path.fish.inc'; end

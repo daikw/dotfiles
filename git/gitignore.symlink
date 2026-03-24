@@ -16,5 +16,6 @@ main.tfvars
 coverage.out
 **/CLAUDE.local.md
 **/.claude/settings.local.json
+**/.claude/worktrees
 **/.claude/persona.json
-
+**/.serena
