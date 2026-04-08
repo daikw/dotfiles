@@ -40,6 +40,7 @@ local options = {
 	backspace = { "indent", "eol", "start" },
 	spell = true,
 	spelllang = { "en_us", "cjk" },
+	spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
 	laststatus = 3,
 	list = true,
 	listchars = "eol:↲,tab:» ,trail:·,extends:<,precedes:>,conceal:┊,nbsp:␣",
