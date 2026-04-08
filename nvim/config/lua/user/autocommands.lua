@@ -30,5 +30,7 @@ augroup _markdown
   autocmd!
   autocmd FileType markdown setlocal wrap
   autocmd FileType markdown setlocal spell
+  " URL を spell check 対象から除外する
+  autocmd FileType markdown,gitcommit,NeogitCommitMessage syntax match UrlNoSpell /\v<\w+:\/\/\S+>/ contains=@NoSpell containedin=ALL
 augroup END
 ]])
