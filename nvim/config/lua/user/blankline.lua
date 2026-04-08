@@ -1,9 +1,12 @@
-local ok, blankline = pcall(require, "indent_blankline")
+local ok, ibl = pcall(require, "ibl")
 if not ok then
 	return
 end
 
-blankline.setup({
-	show_current_context = true,
-	show_current_context_start = true,
+ibl.setup({
+	scope = {
+		enabled = true,
+		show_start = true,
+		show_end = false,
+	},
 })
