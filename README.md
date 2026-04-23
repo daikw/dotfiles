@@ -1,3 +1,13 @@
+> **⚠️ ARCHIVED (2026-04-23)**
+>
+> This repository has been migrated to chezmoi-managed dotfiles.
+> The active source of truth is now:
+>
+>   https://github.com/daikw/chezmoi-dotfiles  (private)
+>
+> Tag `v4.2.0-archived` marks the final state captured at the cutover.
+> No further changes will be made here.
+
 <p align="center">
   <img alt="header image" src="https://raw.githubusercontent.com/caarlos0/dotfiles.fish/master/docs/header.svg" height="350" />
   <h2 align="center">carlos' dotfiles</h2>
